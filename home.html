@@ -4,15 +4,57 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <title>MoodAnimator</title>
 </head>
 
 <body>
-  <div class="container">
-    <h2>MoodAnimator</h2>
-  </div>
+  <main role="main" class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5">MoodAnimator</h1>
+      <p class="lead">Beat and mood visualizer that allows users to see mood and beat of a song and listen to it in real time </p>
+      <p class="lead"><small>Created By Nneoma Oradiegwu, Jessica Li, Dayeon Hwang</small></p>
+      <p class="lead"><small>Advised By Northwestern University Professor Bryan Pardo</small></p>
+      <p class="lead"><small>EECS 352 Machine Perception Of Music and Audio</small></p>
+    </div>
+
+    <div class="container">
+      <h3 class="mt-5">Motivation</h3>
+      <p class="lead"><small>Rhythm is important to understand music and dancing, but also in social interaction when individuals achieve synchrony in their interactions. Being able to see the rhythm of a song, and how it changes, can help users better understand rhythm. We are inspired by Keepon which is a robot designed for nonverbal interaction with children with developmental disorders. It dances when music is playing and changes its dance moves based on rhythm of music. Simply put, it detects beat of music and conveys emotion and beat through its movements. We believe that having the animation match the mood of the song can help users relate more to the visualization, such as a person dancing for a happy song, or more subdued movements for a sad song.</small></p>
+    </div>
+
+    <div class="container">
+      <h3 class="mt-5">Overview</h3>
+      <div class="mx-auto">
+        <img src="imgs/graph.png" class="rounded" alt="Responsive image" style="width: 100%;">
+      </div>
+      <p class="lead"><small>MoodAnimator is a beat and mood visualizer that allows users to see mood and beat data as a song is played in real time. There are many existing audio visualizations but our system will present a different animation depending on the mood, which is played at different frame rates so that the movements in the animation match the beat of the song. Firstly, user chooses a song from our collection of songs or uploads a wav file. Then, each song is classified into one of five mood categories (excited, happy, neutral, sad, devastated) with Spotify API by computing a weighted mood score, and the song is matched to an animation based on the score. Lastly, our system tracks beat of the song and modifies the movements in the animation to match the beat of the song. User can compare with the original animation with the new animation to see any differences.</small></p>
+    </div>
+
+    <div class="container">
+      <h3 class="mt-5">Methods</h3>
+      <p class="lead"><small>For songs, we selected 20 songs from Spotify with varying moods and beats to provide them as a pre-selected collection of songs for users. For animations, we selected 1-2 animations per each mood category to map songs to animations of similar moods. For mood classification, we used Spotify API to get audio features of a song including energy, danceability and valence and we computed a numerical mood value by weighing 25% of energy, 25% of danceability and 50% of valence. We decided to weigh valence more heavily because songs with high valence sounds more positive and happy while those with low valence sounds are negative, sad and depressed. To measure success of our system, we conducted user testing on 3-5 users. (MORE) </small></p>
+    </div>
+
+    <div class="container">
+      <h3 class="mt-5">Results</h3>
+      <p class="lead"><small>Overall, MoodAnimator does a good job of visualizing a song’s beats and its mood in real-time. We tested its performance on our collection of songs during user testing. Comparing original animations with modified animations and listening to a song at the same time definitely helps users to see mood and beat data of the song. Many users enjoyed navigating and choosing different songs to visualize them. However, future work includes working on songs that are classified as sad but has fast tempo and beats. For example, when we tested on Coldplay’s “Fix You” whose mood score is classified as ‘sad’, we noticed that its matched animation moved too fast because of its fast background beat. We hope to fix this so that the animation moves slowly to conveys the song’s emotions more realistically. </small></p>
+    </div>
+
+  </main>
+
+
+
+  <footer class="footer mt-auto py-3">
+    <div class="container col-6 col-md">
+      <h5><strong>Contact Info</strong></h5>
+      <p class="text-muted"><strong>Nneoma Oradiegwu</strong> nneomaoradiegwu2019@u.northwestern.edu</span>
+      <p class="text-muted"><strong>Jessica Li</strong> jessicali1.2018@u.northwestern.edu </span>
+      <p class="text-muted"><strong>Dayeon Hwang</strong> dahwang2018@u.northwestern.edu </span>
+    </div>
+  </footer>
+
 </body>
 </html>
-
